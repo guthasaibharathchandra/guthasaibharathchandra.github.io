@@ -3,19 +3,32 @@
 
 <style>
 	.navbar{
+
+        
         list-style-type: none;
-        margin: 0;
-        padding: 0;
         background-color: LightGray; 
-        width: 70px;
+        width: 2cm;
         height: 100vh ;
-	}
+        float: left;
+        padding-left: 0;
+        margin-top: 0;
+        text-align: center;
+        padding-top: 0.1cm;
+        padding-bottom: 0.1cm; 
+        }
+
+
 
   .slide{
         
-        margin-left: 70px;
         background-color: LightGray; 
+        margin-left: 2.1cm;
+        text-align: center;
+        padding-top: 0.1cm;
+        padding-bottom: 0.1cm;
+        height: 100vh ;
         
+
   }
 
 </style>
@@ -56,7 +69,7 @@ function colorLinks(hex)
 
 function slideAbout(){
      colorLinks(default_link_color);
-     text = "&nbsp Welcome to my personal website <br> &nbsp Page will be updated soon, Thank you for visiting!"
+     text = "Welcome to my personal website <br> Page will be updated soon, Thank you for visiting!"
      document.getElementById("slideText").innerHTML = text;
      document.getElementById("about").style.color = highlighted_link_color; 
      return false 
@@ -108,17 +121,17 @@ function slideBlogPosts(){
 
 <div id="controlpane">
 
-<div id="navbar" style="float:left;">
+<div id="navbar">
 <ul id="navbarlist" class="navbar">
   <li><a id="about" href="about" onclick="return slideAbout();">About</a></li>
-  <li><a id="cv" href="cv" onclick="return slideCV();">CV</a></li>
-  <li><a id="contact" href="contact" onclick="return slideContact();">Contact</a></li>
   <li><a id="projects" href="projects" onclick="return slideProjects();">Projects</a></li>
+  <li><a id="cv" href="cv" onclick="return slideCV();">Resume</a></li>
+  <li><a id="contact" href="contact" onclick="return slideContact();">Contact</a></li>
   <li><a id="blogposts" href="blogposts" onclick="return slideBlogPosts();">Blog posts</a></li>
 </ul>
 </div>
 
-<div id="slide" class="slide" style="float:center;">
+<div id="slide" class="slide">
 <p id="slideText">
 </p>
 </div>
