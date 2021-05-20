@@ -2,6 +2,15 @@
 <html>
 
 <style>
+
+    .redtext{
+    	color: brown;
+    	text-decoration:none;
+    	
+    	} 
+
+
+
 	.navbar{
 
         
@@ -23,9 +32,10 @@
         
         background-color: LightGray; 
         margin-left: 2.1cm;
-        text-align: center;
+        
         padding-top: 0.1cm;
         padding-bottom: 0.1cm;
+        padding-left: 0.4cm;
         height: 100vh ;
         
 
@@ -44,7 +54,10 @@
   gtag('config', 'G-M5W9J0673V');
 </script>
 
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400&display=swap" rel="stylesheet">
 <title>gutha sai bharath chandra</title>
 
 
@@ -69,7 +82,13 @@ function colorLinks(hex)
 
 function slideAbout(){
      colorLinks(default_link_color);
-     text = "Welcome to my personal website <br> Page will be updated soon, Thank you for visiting!"
+     
+     text = "Welcome! My name is <a class=\"redtext\"> Sai bharath chandra Gutha.</a> \
+     I received my Bachelor's degree (B.Tech, 4yr degree) in Computer Science & Engineering \
+     from <a href=\"http://www.iitkgp.ac.in/\" class=\"redtext\" target=\"_blank\">Indian Institute of Technology Kharagpur, India </a> in 2018. I was a Software Engineer for 2 years in \
+     the Speech Recognition \& NLP Team at <a href=\"https://research.samsung.com/sri-b\" target=\"_blank\" class=\"redtext\"> Samsung Research \& Development Institute Bangalore, India.</a> \
+     Currently I'm a first year master\'s student in the Computer Science program at <a href=\"https://uni-freiburg.de/en/\" target=\"_blank\" class=\"redtext\">Abert-Ludwigs University of Freiburg, Germany.</a>\
+     "
      document.getElementById("slideText").innerHTML = text;
      document.getElementById("about").style.color = highlighted_link_color; 
      return false 
@@ -117,7 +136,7 @@ function slideBlogPosts(){
 
 </head>
 
-<body onload="slideAbout();">
+<body onload="slideAbout();" style=" font-family: 'oxygen', sans-serif;  ">
 
 <div id="controlpane">
 
