@@ -35,7 +35,8 @@
         
         padding-top: 0.1cm;
         padding-bottom: 0.1cm;
-        padding-left: 0.4cm;
+        padding-left: 0.5cm;
+        padding-right: 0.5cm;
         height: 100vh ;
         
 
@@ -63,7 +64,8 @@
 
 <script>
 	
-	
+
+IS_EMBED = 0;	
 default_link_color = "#0000FF";
 highlighted_link_color = "#FF0000";
 
@@ -80,7 +82,34 @@ function colorLinks(hex)
     }  
 }
 
+
+function embedCV(){
+    var x = document.createElement("EMBED");
+    x.width = "100%";
+    x.height = "90%";
+    x.src = "CV_sai_bharath.pdf";
+    document.getElementById("slide").appendChild(x); 
+    IS_EMBED = 1;   
+}
+
+function remove_embedCV(){
+     x = document.getElementById("slide");
+     c = x.childNodes;	
+     var i=-1;
+     for(i=0;i<c.length;i++){
+     	 if(c[i].nodeName == "EMBED")break;
+     }
+     if(i >=0 && i < c.length){
+       x.removeChild(c[i]);   
+     }
+     IS_EMBED = 0;
+}
+
+
+
+
 function slideAbout(){
+     if(IS_EMBED==1)remove_embedCV();
      colorLinks(default_link_color);
      
      text = "Welcome! My name is <a class=\"redtext\"> Sai bharath chandra Gutha.</a> \
@@ -94,16 +123,21 @@ function slideAbout(){
      return false 
 }
 
+
+
+
 function slideCV(){
+     if(IS_EMBED==0)embedCV();
      colorLinks(default_link_color);
-     text = "My CV will be added soon!"
-     document.getElementById("slideText").innerHTML = text;
-     document.getElementById("cv").style.color = highlighted_link_color; 
+     text = "My Latest Resume!"; 
+     document.getElementById("slideText").innerHTML = text; 
+     document.getElementById("cv").style.color = highlighted_link_color;      
      return false 
 	
 }
 
 function slideContact(){
+	 if(IS_EMBED==1)remove_embedCV();
      colorLinks(default_link_color);      
      text = "My contact details will be added soon!"
      document.getElementById("slideText").innerHTML = text;
@@ -113,6 +147,7 @@ function slideContact(){
 }
 
 function slideProjects(){
+	 if(IS_EMBED==1)remove_embedCV();
      colorLinks(default_link_color);     
      text = "My past and current projects will be added soon!"
      document.getElementById("slideText").innerHTML = text;
@@ -122,8 +157,9 @@ function slideProjects(){
 }
 
 function slideBlogPosts(){
+	 if(IS_EMBED==1)remove_embedCV();
      colorLinks(default_link_color);      
-     text = "!"
+     text = "!";
      document.getElementById("slideText").innerHTML = text;
      document.getElementById("blogposts").style.color = highlighted_link_color; 
      return false 
