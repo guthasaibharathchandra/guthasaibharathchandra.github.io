@@ -44,6 +44,14 @@
 
 <head>
 
+
+<meta charset="UTF-8">
+<meta name="description" content="personal website">
+<meta name="keywords" content="saibharathgutha, guthasaibharathchandra, sai bharath chandra gutha, sai bharath, sai bharath gutha, gutha sai bharath">
+<meta name="author" content="Sai bharath chandra Gutha">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5W9J0673V"></script>
 <script>
@@ -86,6 +94,7 @@ function embedCV(){
     x.width = "100%";
     x.height = "90%";
     x.src = "CV_sai_bharath.pdf";
+    x.type = "application/pdf";
     document.getElementById("slide").appendChild(x); 
     IS_EMBED = 1;   
 }
@@ -105,7 +114,6 @@ function remove_embedCV(){
 
 
 
-
 function slideAbout(){
      if(IS_EMBED==1)remove_embedCV();
      colorLinks(default_link_color);
@@ -120,8 +128,6 @@ function slideAbout(){
      document.getElementById("about").style.color = highlighted_link_color; 
      return false 
 }
-
-
 
 
 function slideCV(){
@@ -165,8 +171,10 @@ function slideBlogPosts(){
 }
 
 
-
 </script>
+
+
+
 
 </head>
 
